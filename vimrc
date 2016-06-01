@@ -17,7 +17,8 @@ Plugin 'gmarik/vundle'
 Plugin 'tomasr/molokai'  " Molokai Color
 Plugin 'tpope/vim-fugitive'  " git wrapper
 Plugin 'Lokaltog/vim-easymotion'  " alphabetical file nav
-Plugin 'bling/vim-airline'  " sexy status line
+Plugin 'vim-airline/vim-airline'  " sexy status line
+Plugin 'vim-airline/vim-airline-themes'  " themes
 Plugin 'mattn/emmet-vim'  " magical html syntax shortcuts
 Plugin 'airblade/vim-gitgutter'  " git diff gutter
 Plugin 'scrooloose/syntastic'  "syntax checker

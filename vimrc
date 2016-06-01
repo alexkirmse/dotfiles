@@ -1,9 +1,13 @@
+" https://github.com/VundleVim/Vundle.vim
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" or use
+" set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
@@ -41,7 +45,9 @@ Plugin 'pangloss/vim-javascript'
 " Autocompletion Plugins
 Plugin 'Raimondi/delimitMate' " insert mode auto-completion for quotes, parens, brackets
 
-filetype plugin indent on     " required
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Colors
 color molokai

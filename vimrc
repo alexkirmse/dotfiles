@@ -1,5 +1,8 @@
 " https://github.com/VundleVim/Vundle.vim
 
+" Run the following on the terminal to make vim font thinner in MacVim
+" defaults write org.vim.MacVim AppleFontSmoothing -int 0
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 

@@ -3,6 +3,7 @@
 
 set nocompatible              " be iMproved, required
 scriptencoding utf-8
+set termguicolors " use true colors in terminal (from neovim)
 
 " vim-plug - https://github.com/junegunn/vim-plug
 " https://github.com/junegunn/vim-plug/wiki/faq#migrating-from-other-plugin-managers

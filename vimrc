@@ -1,60 +1,61 @@
-" https://github.com/VundleVim/Vundle.vim
-
 " Run the following on the terminal to make vim font thinner in MacVim
 " defaults write org.vim.MacVim AppleFontSmoothing -int 0
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
+scriptencoding utf-8
 
-" set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/vundle/
-" or use
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+" vim-plug - https://github.com/junegunn/vim-plug
+" https://github.com/junegunn/vim-plug/wiki/faq#migrating-from-other-plugin-managers
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Start Plugins
+call plug#begin('~/.vim/bundle')
 
 " VIM PLUGINS
 
-Plugin 'tomasr/molokai'  " Molokai Color
-Plugin 'tpope/vim-fugitive'  " git wrapper
-Plugin 'Lokaltog/vim-easymotion'  " alphabetical file nav
-Plugin 'vim-airline/vim-airline'  " sexy status line
-Plugin 'vim-airline/vim-airline-themes'  " themes
-Plugin 'mattn/emmet-vim'  " magical html syntax shortcuts
-Plugin 'airblade/vim-gitgutter'  " git diff gutter
-Plugin 'scrooloose/syntastic'  "syntax checker
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'vim-scripts/tComment'   "commenting with gc
-Plugin 'kien/ctrlp.vim'  " fast file searching
+Plug 'tomasr/molokai'  " Molokai Color
+Plug 'joshdick/onedark.vim'  " One Dark Color
+Plug 'tpope/vim-fugitive'  " git wrapper
+Plug 'Lokaltog/vim-easymotion'  " alphabetical file nav
+Plug 'bling/vim-airline'  " sexy status line
+Plug 'mattn/emmet-vim'  " magical html syntax shortcuts
+Plug 'airblade/vim-gitgutter'  " git diff gutter
+Plug 'scrooloose/syntastic'  "syntax checker
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'vim-scripts/tComment'   "commenting with gc
+Plug 'kien/ctrlp.vim'  " fast file searching
 
 " Lang support
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'  " ruby support
-Plugin 'tpope/vim-rails.git'
-Plugin 'tpope/vim-endwise'  " end after code blocks in ruby
+Plug 'vim-ruby/vim-ruby'  " ruby support
+Plug 'tpope/vim-endwise'  " end after code blocks in ruby
 
 " CSS3
-Plugin 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax'
 
 " Sass
-Plugin 'cakebaker/scss-syntax.vim'
+Plug 'cakebaker/scss-syntax.vim'
 
 " Javascript
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
 
 " Autocompletion Plugins
-Plugin 'Raimondi/delimitMate' " insert mode auto-completion for quotes, parens, brackets
+Plug 'Raimondi/delimitMate' " insert mode auto-completion for quotes, parens, brackets
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
+" End of plugin references
+
 
 " Colors
-color molokai
+" color molokai
+color onedark
 
 " Show line numbers
 set number

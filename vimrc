@@ -1,9 +1,10 @@
 " Run the following on the terminal to make vim font thinner in MacVim
+"
 " defaults write org.vim.MacVim AppleFontSmoothing -int 0
 
 set nocompatible              " be iMproved, required
 scriptencoding utf-8
-set termguicolors " use true colors in terminal (from neovim)
+set termguicolors
 
 " vim-plug - https://github.com/junegunn/vim-plug
 " https://github.com/junegunn/vim-plug/wiki/faq#migrating-from-other-plugin-managers
@@ -23,7 +24,8 @@ Plug 'tomasr/molokai'  " Molokai Color
 Plug 'joshdick/onedark.vim'  " One Dark Color
 Plug 'tpope/vim-fugitive'  " git wrapper
 Plug 'Lokaltog/vim-easymotion'  " alphabetical file nav
-Plug 'bling/vim-airline'  " sexy status line
+Plug 'vim-airline/vim-airline'  " sexy status line
+Plug 'vim-airline/vim-airline-themes'  " themes
 Plug 'mattn/emmet-vim'  " magical html syntax shortcuts
 Plug 'airblade/vim-gitgutter'  " git diff gutter
 Plug 'scrooloose/syntastic'  "syntax checker

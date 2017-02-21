@@ -31,7 +31,8 @@ Plug 'airblade/vim-gitgutter'  " git diff gutter
 Plug 'scrooloose/syntastic'  "syntax checker
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-scripts/tComment'   "commenting with gc
-Plug 'kien/ctrlp.vim'  " fast file searching
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " alternate fuzzy file searching
+Plug 'junegunn/fzf.vim'
 
 " Lang support
 
@@ -80,15 +81,23 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
 " Syntastic Settings
-let g:syntastic_mode_map = { 'mode': 'active',
-  \ 'active_filetypes': [],
-  \ 'passive_filetypes': ['html'] }
-
-let g:syntastic_warning_symbol = 'WW'
-let g:syntastic_error_symbol = 'EE'
-
-" Use jshint (uses ~/.jshintrc)
-let g:syntastic_javascript_checkers = ['jshint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 " Tab Settings
 set expandtab
@@ -120,3 +129,11 @@ nmap <C-Down> ddp
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+
+" FZF ctrl-p keybindings http://www.devinrm.com/blog/2016/02/16/ditching-ctrl-p
+" Fuzzy-find with fzf
+map <C-p> :Files<cr>
+nmap <C-p> :Files<cr>
+
+" View commits in fzf
+nmap <Leader>c :Commits<cr>

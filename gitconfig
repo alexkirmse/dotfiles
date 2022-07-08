@@ -1,9 +1,9 @@
 [user]
 	name = Alex Kirmse
-	email = alexkirmse@gmail.com
+	email = # fill out
 [core]
 	excludesfile = /Users/alexkirmse/.gitignore_global
-	editor = /usr/bin/vim
+	editor = /usr/local/bin/nvim
 [credential]
 	helper = osxkeychain
 [color]

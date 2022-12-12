@@ -25,12 +25,6 @@ set background=dark         " Dark version
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 
-" Color schemes
- if (has("termguicolors"))
-   set termguicolors
- endif
-colorscheme one
-
 " Automatic installation of vim-plug (if not installed)
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -77,3 +71,10 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'jelera/vim-javascript-syntax'
     Plug 'pangloss/vim-javascript'
 call plug#end()
+
+" Color schemes
+ if (has("termguicolors"))
+   set termguicolors
+ endif
+colorscheme one
+
